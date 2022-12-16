@@ -15,9 +15,6 @@ const HomePageStyles = styled.div`
         margin: 0 auto;
         display: flex;
     }
-
-    .bannerSection{}
-    
     .bannerImg{
         width: 35rem;
     }
@@ -52,6 +49,35 @@ const HomePageStyles = styled.div`
     .goToSiteBttn:hover{
         color: var(--white);
         background-color: var(--brand);
+    }
+
+    @media (max-width: 1030px){
+        .homePageMain{
+            align-items: center;
+            flex-direction: column;
+        }
+        .descriptionSection{
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.75);
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 570px){
+        .bannerImg{
+            width: 25rem;
+        }
+    }
+
+    @media (max-width: 415px){
+        .bannerImg{
+            width: 19rem;
+        }
+        .losChapasLogo{
+            width: 19rem;
+        }
     }
 
 `
