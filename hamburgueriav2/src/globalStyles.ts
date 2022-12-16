@@ -20,7 +20,8 @@ const GlobalStyles = createGlobalStyle`
     --grey-1: #F5F5F5;
     --grey-2: #E0E0E0;
     --grey-3: #828282;
-    --grey-4: #333333; //escuro
+    --grey-4: #333333;
+    --grey-5: #101010; //escuro
     
     --title-1: 1.625rem; /* 26px */
     --title-2: 1.375rem; /* 22px */
