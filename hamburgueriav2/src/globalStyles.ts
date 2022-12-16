@@ -6,9 +6,12 @@ const GlobalStyles = createGlobalStyle`
 *{
     list-style: none;
     text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.root{
+:root{
 
     --brand: #E7A954;
     --brand-focus: #E2962E;
