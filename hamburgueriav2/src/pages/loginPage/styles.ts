@@ -83,19 +83,6 @@ h1{
     font-size: var(--text-3);
 }
 
-/* .backToSiteDiv{
-    height: 3rem;
-    width: 50%;
-
-    border: 0.06rem solid var(--brand);
-    border-radius: 0.25rem;
-    
-    transition: all 0.8s;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 
 .backToSite{ 
     padding: 0.5rem 2rem;

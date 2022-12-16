@@ -3,6 +3,7 @@ import GlobalStyles from './globalStyles';
 import logo from './logo.svg';
 import HomePage from './pages/homePage';
 import LoginPage from './pages/loginPage';
+import RegisterPage from './pages/registerPage';
 
 function App() {
   return (
@@ -11,7 +12,9 @@ function App() {
 
       {/* <HomePage/> */}
 
-      <LoginPage/>
+      {/* <LoginPage/> */}
+
+      <RegisterPage />
 
     </div>
   );
