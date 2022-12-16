@@ -52,6 +52,8 @@ const LoginFormStyles = styled.form`
         flex-direction: column;
         color: white;
 
+        text-align: center;
+
         margin-top: 1rem;
     }
     .toRegisterAnchor{
