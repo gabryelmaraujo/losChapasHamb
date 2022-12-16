@@ -1,7 +1,11 @@
 import { createGlobalStyle } from "styled-components";
-
+import background from "./assets/backgroundhomepage.jpg"
 
 const GlobalStyles = createGlobalStyle`
+body{
+    background-image: url(${background});
+    background-size: cover;
+}
 
 *{
     list-style: none;
@@ -9,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
+
 }
 
 :root{

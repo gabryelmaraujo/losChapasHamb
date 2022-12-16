@@ -1,12 +1,10 @@
-import background from "../../assets/backgroundhomepage.jpg"
+
 import styled from "styled-components";
 
 
 const RegisterPageStyles = styled.div`
     height: 100vh;
     width: 100%;
-    background-image: url(${background});
-    background-size: cover;
     
 
     .registerPageMain{
