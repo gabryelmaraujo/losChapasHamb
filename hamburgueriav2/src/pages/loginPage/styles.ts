@@ -97,6 +97,25 @@ h1{
     color: white;
 }
 
+@media (max-width: 830px){
+    .bannerSection{
+        width: 35%;
+    }
+}
+@media (max-width: 610px){
+    .bannerSection{
+        display: none;
+    }
+    .loginSection{
+        width: 45%;
+    }
+}
+@media (max-width: 610px){
+    .loginSection{
+        width: 65%;
+    }
+}
+
 `
 
 export default LoginPageStyles

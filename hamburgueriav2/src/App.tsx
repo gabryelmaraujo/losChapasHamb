@@ -12,9 +12,9 @@ function App() {
 
       {/* <HomePage/> */}
 
-      {/* <LoginPage/> */}
+      <LoginPage/>
 
-      <RegisterPage />
+      {/* <RegisterPage /> */}
 
     </div>
   );
