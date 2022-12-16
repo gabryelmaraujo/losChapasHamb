@@ -4,7 +4,7 @@ import RegisterFormStyles from "./styles"
 const RegisterForm = () => {
 
 return(
-    <RegisterFormStyles>
+    <RegisterFormStyles noValidate autoComplete="off">
         <label htmlFor="registerName" className="labelRegisterName">
             <input type="text" name="registerName" id="registerName" />
             <span className="registerNameSpan">Nome</span>
