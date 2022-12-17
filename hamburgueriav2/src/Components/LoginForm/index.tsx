@@ -55,12 +55,6 @@ const LoginForm = () => {
                 </label>
 
                 <button type="submit" id="login-button">Login</button>
-                {/* <div className="goRegisterDiv">
-                    <span>Ainda não tem uma conta?</span>
-                    <Link to={"/register"} className="toRegisterAnchor">Cadastre-se</Link>
-                </div> */}
-
-
         </LoginFormStyles>
     )
 
