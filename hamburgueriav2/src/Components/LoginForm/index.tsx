@@ -5,13 +5,21 @@ import LoginFormStyles from "./styles"
 import { yupResolver } from "@hookform/resolvers/yup"
 import instance from "../../services/api"
 import { useNavigate } from "react-router-dom";
+import { useState, useContext } from "react"
+import { iUserData, UserContext } from "../../contexts/UserContext"
+import { ProductsContext } from "../../contexts/ProductsContext"
 
 interface iLoginFormValues{
     email: string;
     password: string;
 }
 
+  
 const LoginForm = () => {
+
+    
+    const { setIsLogged, setLoggedUser } = useContext(UserContext)
+    const { getProducts } = useContext(ProductsContext)
 
     const navigate = useNavigate()
 
@@ -27,10 +35,21 @@ const LoginForm = () => {
     const submitLogin: SubmitHandler<iLoginFormValues> = async (data) => {
         try{
 
-            const response = await instance.post("/login", data)
+            const response = await instance.post<iUserData>("/login", data)
 
             if(response.status === 200){
-                navigate("/main")
+
+                const loggedToken = response.data.accessToken
+
+                setIsLogged(true)
+                setLoggedUser(response.data)
+
+                getProducts(loggedToken)
+
+                setTimeout(()=>{
+                    navigate("/main")
+                }, 2500)
+                
             }
 
         }catch(error){
