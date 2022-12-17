@@ -9,7 +9,7 @@ const LoginPageStyles = styled.div`
 
 h1{
     color: var(--white);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .loginPageMain{
@@ -83,15 +83,14 @@ h1{
 }
 
 
-.backToSite{ 
-    padding: 0.5rem 2rem;
-    width: 50%;
+.goRegister{ 
+    padding: 0.5rem 3rem;
     border: 0.06rem solid var(--brand);
     border-radius: 0.25rem;
     transition: all 0.8s;
     color: var(--brand);
 }
-.backToSite:hover{
+.goRegister:hover{
     background-color: var(--brand);
     color: white;
 }

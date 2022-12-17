@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -36,19 +37,7 @@ const HomePageStyles = styled.div`
         margin-bottom: 2rem;
         text-align: center;
     }
-    .goToSiteBttn{
-        color: var(--brand);
-        background-color: unset;
-        border: 1px solid var(--brand);
-        padding: 0 1rem;
-        height: 2rem;
-        cursor: pointer;
-        transition: all 0.5s;
-    }
-    .goToSiteBttn:hover{
-        color: var(--white);
-        background-color: var(--brand);
-    }
+
 
     @media (max-width: 1030px){
         .homePageMain{
@@ -82,3 +71,25 @@ const HomePageStyles = styled.div`
 `
 
 export default HomePageStyles
+
+export const LinkStyles = styled(Link)`
+
+    .goToSiteBttn{
+        color: var(--brand);
+        background-color: unset;
+        border: 1px solid var(--brand);
+        padding: 0 2.5rem;
+        height: 2rem;
+        cursor: pointer;
+        transition: all 0.5s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .goToSiteBttn:hover{
+        color: var(--white);
+        background-color: var(--brand);
+    }
+
+`

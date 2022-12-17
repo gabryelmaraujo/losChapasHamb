@@ -4,6 +4,7 @@ import igIcon from "../../assets/igpng.png"
 import logoLosChapas from "../../assets/loschapaslogo.png"
 import SearchForm from "../../Components/SearchForm"
 import ProductsList from "../../Components/ProductsList"
+import { Link } from "react-router-dom"
 
 const MainPage = () => {
 
@@ -11,10 +12,14 @@ return(
     <MainPageStyles>
         <header className="mainPageHeader">
             <div className="logoLosChapasDiv">
+                <Link to={"/home"}>
                 <img src={logoLosChapas} alt="" className="logoLosChapas"/>
+                </Link>
             </div>
             <div className="utilitiesDiv">
-                <a href="/" className="toLoginAnchor">Logar</a>
+                <Link to={"/login"}>
+                    <div className="toLoginAnchor">Sair</div>
+                </Link>
                 <button className="openCartButton">
                     <img src={cartImg} alt="" className="cartImg" />
                 </button>

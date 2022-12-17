@@ -4,6 +4,7 @@ import LoginPageStyles from "./styles"
 
 import burgerIcon from "../../assets/burgericon.png"
 import losChapasLogo from "../../assets/loschapaslogo.png"
+import { Link } from "react-router-dom"
 
 const LoginPage = () => {
 
@@ -29,7 +30,9 @@ return(
                     <p className="descriptionParag">A vida é como um hambúrger, é preciso recheá-la com os melhores ingredientes.</p>
                 </div>
                 <div className="backToSiteDiv">
-                    <a href="/" className="backToSite">Voltar para o site</a>
+                    <Link to={"/register"}>
+                        <div className="goRegister">Faça a sua conta</div>
+                    </Link>
                 </div>
             </section>
 

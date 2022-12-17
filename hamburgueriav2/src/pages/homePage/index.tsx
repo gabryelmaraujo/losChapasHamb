@@ -3,7 +3,11 @@ import HomePageStyles from "./styles"
 import losChapasLogo from "../../assets/loschapaslogo.png"
 import burgerBanner from "../../assets/burgerBanner.png"
 
+import { LinkStyles } from "./styles"
+
 const HomePage = () => {
+
+
 
 return(
     <HomePageStyles>
@@ -19,7 +23,9 @@ return(
                     <p className="bestBurgerParag">O melhor hambúrguer do RS em 2022 segundo o ifood!</p>
                 </div>
                 <div className="goToSiteDiv">
-                    <button className="goToSiteBttn">Acessar o site</button>
+                    <LinkStyles to={"/login"}>
+                        <div className="goToSiteBttn">Acessar</div>
+                    </LinkStyles>
                 </div>
             </section>
         </main>
