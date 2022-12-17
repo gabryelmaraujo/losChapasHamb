@@ -7,6 +7,22 @@ body{
     background-size: cover;
 }
 
+.inputError{
+    color: red;
+    position: absolute;
+    top: 3rem;
+    font-size: 0.75rem;
+}
+
+@media (max-width: 650px){
+    .inputError{
+    color: red;
+    position: absolute;
+    top: 42.875rem;
+    font-size: 0.75rem;
+    }
+}
+
 *{
     list-style: none;
     text-decoration: none;
