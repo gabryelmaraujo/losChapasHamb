@@ -23,7 +23,7 @@ const MainPageStyles = styled.div`
     }
 
     .logoLosChapas{
-        width: 100%;
+        width: 5.625rem;
     }
     .utilitiesDiv{
         display: flex;
@@ -70,7 +70,7 @@ const MainPageStyles = styled.div`
     }
 
     .igIcon{
-        width: 5%;
+        width: 1.625rem;
     }
 
     h2{
@@ -96,6 +96,66 @@ const MainPageStyles = styled.div`
     .openingHoursDiv{
         width: 30%;
     }
+
+@media (max-width: 1200px){
+    .productsListDiv{
+        max-height: 31.25rem;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding: 2rem;
+    }
+
+    .mainContainer{
+        height: 38.5rem;
+        margin-bottom: 0;
+    }
+
+    .searchDiv{
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 900px){
+
+    .searchDiv{
+        margin-bottom: 1rem;
+    }
+
+    .mainContainer{
+        height: 29.5rem;
+    }
+
+    .productsListDiv{
+        max-height: 22.25rem;
+    }
+}
+
+@media (max-width: 650px){
+    
+    .mainContainer{
+        height: 29.5rem;
+    }
+    
+    .productsListDiv{
+        overflow-x: scroll;
+    }
+}
+
+@media (max-width: 475px){
+
+    .mainContainer{
+        height: 27.5rem;
+    }
+
+    .mainPageFooter{
+        flex-direction: column;
+    }
+
+    .contactDiv, .addresDiv, .openingHoursDiv{
+        width: 100%;
+    }
+
+}
 
 `
 export default MainPageStyles

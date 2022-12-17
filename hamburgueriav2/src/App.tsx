@@ -15,9 +15,9 @@ function App() {
 
       {/* <LoginPage/> */}
 
-      {/* <RegisterPage /> */}
+      <RegisterPage />
 
-      <MainPage/>
+      {/* <MainPage/> */}
 
     </div>
   );

@@ -23,7 +23,7 @@ const RegisterPageStyles = styled.div`
     }
 
     .logoLosChapas{
-        width: 25%;
+        width: 14.875rem;
     }
 
     .registerSection{

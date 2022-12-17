@@ -10,6 +10,10 @@ const ProductsListStyles = styled.ul`
     justify-content: center;
     gap: 3rem;
 
+    @media (max-width: 650px){
+        width: 122rem;
+    }
+
 `
 
 export default ProductsListStyles
