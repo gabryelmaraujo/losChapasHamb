@@ -1,25 +1,22 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import instance from "../../services/api"
 import ProductsCard from "../ProductsCard"
 import ProductsListStyles from "./styles"
 import axios from "axios";
+import { iProducts, ProductsContext } from "../../contexts/ProductsContext";
 
-interface iProducts{
-	id: number,
-	name: string,
-	category: string,
-	price: number,
-	img: string
-}
 
 const ProductsList = () => {
 
-    const [ products, setProducts ] = useState([] as iProducts[])
-
+    const { products } = useContext(ProductsContext)
 
 return(
     <ProductsListStyles>
-        <ProductsCard/>
+		{
+			products.map<any>(({id, name, category, price, img}: iProducts)=>{
+				return <ProductsCard key={id} id={id} name={name} category={category} price={price} img={img} />
+			})
+		}
     </ProductsListStyles>
 )
 
