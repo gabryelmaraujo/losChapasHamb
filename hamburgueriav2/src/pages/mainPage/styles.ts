@@ -23,7 +23,7 @@ const MainPageStyles = styled.div`
     }
 
     .logoLosChapas{
-        width: 5.625rem;
+        width: 9.625rem;
     }
     .utilitiesDiv{
         display: flex;
