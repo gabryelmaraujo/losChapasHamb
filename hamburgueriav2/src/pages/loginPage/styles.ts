@@ -65,7 +65,7 @@ h1{
 }
 
 .burgerIconDiv{
-    width: 20%;
+    width: 5rem;
     border: 0.06rem solid var(--grey-4);
     border-radius: 0.25rem;
     display: flex;
