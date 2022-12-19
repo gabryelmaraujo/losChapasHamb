@@ -1,15 +1,21 @@
+import { useContext } from "react"
+import { CartContext } from "../../contexts/CartContext"
 import CartList from "../CartList"
 import CartModalStyles from "./styles"
 
 
 const CartModal = () => {
 
+    const { modalOpen, setModalOpen } = useContext(CartContext)
+
 return(
     <CartModalStyles className="CartModalSection">
         <section className="cartContainer">
             <header className="cartHeader">
                 <h2 className="cartTitle">Carrinho de compras</h2>
-                <button className="closeModal">X</button>
+                <button className="closeModal" onClick={()=>{
+                    setModalOpen(false)
+                }}>X</button>
             </header>
             <main className="cartMain">
                 <div className="cartListDiv">

@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { Component, createContext, useState } from "react";
 import { iProducts } from "../ProductsContext";
 
 interface iCartValues{
