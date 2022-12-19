@@ -35,6 +35,25 @@ const MainPageStyles = styled.div`
         color: var(--brand);
     }
 
+    .headerCartDiv{
+        position: relative;
+    }
+
+    .contadorItensCarrinhoDiv{
+        position: absolute;
+        top: 0;
+        left: 75%;
+        border: 1px solid var(--brand);
+        border-radius: 100%;
+        padding: 0 4px;
+
+        background-color: var(--brand);
+    }
+
+    .contadorItens{
+        color: var(--grey5);
+    }
+
     .openCartButton{
         width: 2rem;
         background-color: unset;

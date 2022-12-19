@@ -5,8 +5,14 @@ import logoLosChapas from "../../assets/loschapaslogo.png"
 import SearchForm from "../../Components/SearchForm"
 import ProductsList from "../../Components/ProductsList"
 import { Link } from "react-router-dom"
+import CartModal from "../../Components/CartModal"
+import { useContext, useState } from "react"
+import { CartContext } from "../../contexts/CartContext"
 
 const MainPage = () => {
+
+    const { modalOpen, setModalOpen } = useContext(CartContext)
+    // const [modalOpen, setModalOpen] = useState(false)
 
 return(
     <MainPageStyles>
@@ -20,11 +26,21 @@ return(
                 <Link to={"/login"}>
                     <div className="toLoginAnchor">Sair</div>
                 </Link>
-                <button className="openCartButton">
-                    <img src={cartImg} alt="" className="cartImg" />
-                </button>
+                <div className="headerCartDiv">
+                    <button className="openCartButton" onClick={()=>
+                         setModalOpen(true) 
+                    }>
+                        <img src={cartImg} alt="" className="cartImg" />
+                    </button>
+                    <div className="contadorItensCarrinhoDiv">
+                        <p className="contadorItens">5</p>
+                    </div>
+                </div>
             </div>
         </header>
+        {
+            modalOpen ? <CartModal/> : null
+        }
         <section className="mainContainer">
             <main className="mainPageMain">
                 <div className="searchDiv">

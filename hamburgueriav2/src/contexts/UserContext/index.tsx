@@ -1,27 +1,24 @@
 import { createContext, useState } from "react";
 
 interface iUserProviderValues{
-    loggedUser: any;
+    loggedUser: iLoggedUser;
     isLogged: boolean;
-    setLoggedUser: React.Dispatch<React.SetStateAction<iUserData | any>>
+    setLoggedUser: React.Dispatch<React.SetStateAction<iLoggedUser>> 
     setIsLogged: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const UserContext = createContext({} as iUserProviderValues)
 
-export interface iUserData {
-    accessToken: string;
-    user: {
-        email: string
-        name: string
-        id: number
-    };
-  }
-  
 export interface iLoggedUser {
-    loggedUser: any;
-    setLoggedUser: React.Dispatch<React.SetStateAction<iUserData>>;
-  }
+    accessToken: string
+    user: iUser
+}
+  
+export interface iUser {
+    email: string
+    name: string
+    id: number
+}
 
 interface iUserProviderProps{
     children: React.ReactNode;
@@ -30,7 +27,7 @@ interface iUserProviderProps{
 
 export const UserProvider = ({children}: iUserProviderProps) => {
 
-    const [loggedUser, setLoggedUser] = useState<iLoggedUser | any>({})
+    const [loggedUser, setLoggedUser] = useState({} as iLoggedUser)
     const [isLogged, setIsLogged] = useState(false)
 
 return(

@@ -3,7 +3,7 @@ import instance from "../../services/api"
 import ProductsCard from "../ProductsCard"
 import ProductsListStyles from "./styles"
 import axios from "axios";
-import { iProducts, ProductsContext } from "../../contexts/ProductsContext";
+import { iProducts, ProductsContext} from "../../contexts/ProductsContext";
 
 
 const ProductsList = () => {
@@ -13,7 +13,13 @@ const ProductsList = () => {
 return(
     <ProductsListStyles>
 		{
-			products.map<any>(({id, name, category, price, img}: iProducts)=>{
+			products.map((product)=>{
+				const category = product.category;
+				const id = product.id;
+				const img = product.img;
+				const name = product.name
+				const price = product.price
+
 				return <ProductsCard key={id} id={id} name={name} category={category} price={price} img={img} />
 			})
 		}
