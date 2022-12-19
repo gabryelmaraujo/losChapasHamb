@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import instance from "../../services/api"
 import { useNavigate } from "react-router-dom";
 import { useState, useContext } from "react"
-import { iUserData, UserContext } from "../../contexts/UserContext"
+import { iLoggedUser, UserContext } from "../../contexts/UserContext"
 import { ProductsContext } from "../../contexts/ProductsContext"
 
 interface iLoginFormValues{
@@ -35,7 +35,7 @@ const LoginForm = () => {
     const submitLogin: SubmitHandler<iLoginFormValues> = async (data) => {
         try{
 
-            const response = await instance.post<iUserData>("/login", data)
+            const response = await instance.post<iLoggedUser>("/login", data)
 
             if(response.status === 200){
 

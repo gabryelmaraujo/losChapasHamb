@@ -4,6 +4,7 @@ import { UserContext } from "../UserContext";
 
 interface iProductsValues{
     products: iProducts[];
+    setProducts: React.Dispatch<React.SetStateAction<iProducts[]>>;
     getProducts: (token:string) => void;
 }
 
@@ -13,7 +14,7 @@ interface iProductsProps{
     children: React.ReactNode;
 }
 
-export interface iProducts{
+export interface iProducts {
     id: number;
     name: string;
     category: string;
@@ -23,9 +24,7 @@ export interface iProducts{
 
 export const ProductsProvider = ({children}: iProductsProps) => {
 
-    const [products, setProducts] = useState<iProducts[]>([])
-
-    const { loggedUser } = useContext(UserContext)
+    const [products, setProducts] = useState([] as iProducts[])
     
     const getProducts = async (token: string) => {
             try{
@@ -48,6 +47,7 @@ export const ProductsProvider = ({children}: iProductsProps) => {
 return(
     <ProductsContext.Provider value={{
         products,
+        setProducts,
         getProducts
     }}>
         {children}
