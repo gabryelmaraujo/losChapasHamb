@@ -12,7 +12,6 @@ import { CartContext } from "../../contexts/CartContext"
 const MainPage = () => {
 
     const { modalOpen, setModalOpen } = useContext(CartContext)
-    // const [modalOpen, setModalOpen] = useState(false)
 
 return(
     <MainPageStyles>
