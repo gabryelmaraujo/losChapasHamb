@@ -47,7 +47,7 @@ const MainPageStyles = styled.div`
         left: 75%;
         border: 1px solid var(--brand);
         border-radius: 100%;
-        padding: 0 4px;
+        padding: 0 0.5rem;
 
         background-color: var(--brand);
     }

@@ -14,7 +14,7 @@ import { ProductsContext } from "../../contexts/ProductsContext"
 const MainPage = () => {
 
     const { getProducts } = useContext(ProductsContext)
-    const { modalOpen, setModalOpen } = useContext(CartContext)
+    const { modalOpen, setModalOpen, cart } = useContext(CartContext)
     const {loggedToken} = useContext(UserContext)
 
     const navigate = useNavigate()
@@ -51,7 +51,7 @@ return(
                         <img src={cartImg} alt="" className="cartImg" />
                     </button>
                     <div className="contadorItensCarrinhoDiv">
-                        <p className="contadorItens">5</p>
+                        <p className="contadorItens">{cart.length}</p>
                     </div>
                 </div>
             </div>
