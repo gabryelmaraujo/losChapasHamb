@@ -28,7 +28,7 @@ const MainPage = () => {
             navigate("/")
         }
 
-    },[getProducts, loggedToken, navigate])
+    },[])
 
     
 

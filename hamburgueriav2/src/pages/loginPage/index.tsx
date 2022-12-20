@@ -6,8 +6,6 @@ import { useContext, useEffect } from "react"
 import burgerIcon from "../../assets/burgericon.png"
 import losChapasLogo from "../../assets/loschapaslogo.png"
 import { Link, useNavigate } from "react-router-dom"
-import { ProductsContext } from "../../contexts/ProductsContext"
-import { CartContext } from "../../contexts/CartContext"
 import { UserContext } from "../../contexts/UserContext"
 
 const LoginPage = () => {

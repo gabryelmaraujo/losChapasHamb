@@ -4,6 +4,7 @@ import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
 import instance from "../../services/api"
 import { SubmitHandler } from "react-hook-form"
+import { useNavigate } from "react-router-dom"
 
 interface iRegisterValues{
     name: string;
@@ -13,6 +14,8 @@ interface iRegisterValues{
 }
 
 const RegisterForm = () => {
+
+    const navigate = useNavigate()
 
     const registerSchema = yup.object().shape({
         name: yup.string().required("É obrigatório um nome!").min(4,"O nome precisa ter no mínimo 4 caracteres.").max(200, "o nome pode ter no máximo 200 caracteres."),
@@ -30,7 +33,10 @@ const RegisterForm = () => {
 
             const response = await instance.post("/users", data)
 
-            console.log(response)
+            if(response.status === 201){
+                navigate("/login")
+                // toast
+            }
 
         }catch(error){
             console.log(error)

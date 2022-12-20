@@ -5,7 +5,7 @@ import LoginFormStyles from "./styles"
 import { yupResolver } from "@hookform/resolvers/yup"
 import instance from "../../services/api"
 import { useNavigate } from "react-router-dom";
-import { useState, useContext } from "react"
+import { useContext } from "react"
 import { iLoggedUser, UserContext } from "../../contexts/UserContext"
 import { ProductsContext } from "../../contexts/ProductsContext"
 
@@ -18,7 +18,7 @@ interface iLoginFormValues{
 const LoginForm = () => {
 
     
-    const { setIsLogged, setLoggedUser } = useContext(UserContext)
+    const { setLoggedUser } = useContext(UserContext)
     const { getProducts } = useContext(ProductsContext)
 
     const navigate = useNavigate()

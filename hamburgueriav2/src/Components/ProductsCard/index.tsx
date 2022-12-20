@@ -8,15 +8,15 @@ import { CartContext } from "../../contexts/CartContext"
 
 const ProductsList = ({id, name, category, price, img}: iProducts) => {
 
-    const { addToCart, setCart, cart } = useContext(CartContext)
+    const { addToCart } = useContext(CartContext)
 
-    const product = [{
+    const product = {
         id: id,
         name: name,
         category: category,
         price: price,
         img: img,
-    }]
+    }
 
 return(
     <ProductsCardStyles id={id.toString()}>
@@ -27,7 +27,7 @@ return(
             <p className="productName">{name}</p>
             <p className="productPrice">{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
             <button className="addToCartBttn" onClick={()=>
-                setCart(product)
+                addToCart(product)
                  }>Adicionar ao carrinho</button>
         </main>
     </ProductsCardStyles>
