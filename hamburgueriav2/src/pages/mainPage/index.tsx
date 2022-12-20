@@ -42,7 +42,7 @@ return(
             </div>
             <div className="utilitiesDiv">
                     <button className="toLoginButton" onClick={()=>{
-                        localStorage.setItem("@LosChapas/token", "")
+                        localStorage.removeItem("@LosChapas/token")
 
                         navigate("/")
 
