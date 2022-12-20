@@ -1,16 +1,17 @@
 import CartProductStyles from "./styles"
-import chapasBurger from "../../assets/chapasburger.png"
 
-const CartProduct = () => {
+import { iProducts } from "../../contexts/ProductsContext"
+
+const CartProduct = ({id, name, price, img}: iProducts) => {
 
 return(
     <CartProductStyles>
-        <div className="productImgDiv">
-            <img src={chapasBurger} alt="" className="productImg"/>
+        <div className="productImgDiv" id={id.toString()}>
+            <img src={img} alt="" className="productImg"/>
         </div>
         <div className="productInfosDiv">
-            <p className="productName">Hamburguer</p>
-            <p className="productPrice">R$ 35,00</p>
+            <p className="productName">{name}</p>
+            <p className="productPrice">{price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
         </div>
         <div className="productRemoveDiv">
             <button className="productRemoveBttn">X</button>
