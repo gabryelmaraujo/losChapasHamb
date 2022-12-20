@@ -17,6 +17,7 @@ const MainPage = () => {
     const { modalOpen, setModalOpen, cart } = useContext(CartContext)
     const {loggedToken} = useContext(UserContext)
 
+
     const navigate = useNavigate()
 
     useEffect(()=>{

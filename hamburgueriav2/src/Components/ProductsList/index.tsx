@@ -8,12 +8,14 @@ import { iProducts, ProductsContext} from "../../contexts/ProductsContext";
 
 const ProductsList = () => {
 
-    const { products } = useContext(ProductsContext)
+    const { products, search } = useContext(ProductsContext)
+
+	const filteredProducts = products.filter((product)=> product.name.toLowerCase().includes(search.toLowerCase()))
 
 return(
     <ProductsListStyles>
 		{
-			products.map((product)=>{
+			filteredProducts.map((product)=>{
 				const category = product.category;
 				const id = product.id;
 				const img = product.img;
