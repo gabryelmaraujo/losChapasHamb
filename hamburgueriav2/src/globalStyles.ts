@@ -57,6 +57,15 @@ body{
     --font-w-3: 500;
     --font-w-4: 400;
 
+    --toastify-text-color-dark: #E7A954;
+    --toastify-color-progress-dark: #E7A954;
+
+    --toastify-icon-color-success: #E7A954;
+    --toastify-color-progress-success: #E7A954;
+
+    --toastify-icon-color-warning: #E7A954;
+    --toastify-color-progress-warning: #E7A954;
+
 }
 
 `
