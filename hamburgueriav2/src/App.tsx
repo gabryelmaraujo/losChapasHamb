@@ -1,7 +1,6 @@
-import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import GlobalStyles from './globalStyles';
-import AppRoutes from './routes';
+import AppRoutes from './routes/index';
 
 
 
