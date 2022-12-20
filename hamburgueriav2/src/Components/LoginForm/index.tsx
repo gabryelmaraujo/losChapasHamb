@@ -75,6 +75,12 @@ const LoginForm = () => {
                 </label>
 
                 <button type="submit" id="login-button">Login</button>
+                <div className="goRegisterMobileDiv">
+                    <Link to={"/register"}>
+                        <div className="goRegisterMobile">Faça a sua conta</div>
+                    </Link>
+                </div>
+
         </LoginFormStyles>
     )
 

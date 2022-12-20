@@ -63,6 +63,34 @@ const LoginFormStyles = styled.form`
         cursor: pointer;
     }
 
+    .goRegisterMobileDiv{
+        display: none;
+    }
+
+    .goRegisterMobile{
+        display: none;
+    }
+
+    @media (max-width: 610px){
+        #login-button{
+            margin-bottom: 1rem;
+        }
+
+        .goRegisterMobileDiv{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .goRegisterMobile{
+            display: inline;
+            color: var(--brand);
+            padding: 0.5rem 0.5rem;
+            border: 0.06rem solid var(--brand);
+            border-radius: 0.25rem;
+        }
+    }
+
 
 `
 
