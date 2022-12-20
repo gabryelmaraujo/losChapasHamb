@@ -1,9 +1,9 @@
-import { useState, useContext } from "react"
-import instance from "../../services/api"
+import { useContext } from "react"
+
 import ProductsCard from "../ProductsCard"
 import ProductsListStyles from "./styles"
-import axios from "axios";
-import { iProducts, ProductsContext} from "../../contexts/ProductsContext";
+
+import { ProductsContext} from "../../contexts/ProductsContext";
 
 
 const ProductsList = () => {

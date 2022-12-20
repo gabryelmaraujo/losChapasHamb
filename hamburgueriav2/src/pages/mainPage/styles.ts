@@ -35,6 +35,10 @@ const MainPageStyles = styled.div`
         color: var(--brand);
         background-color: unset;
         border: 0;
+        cursor: pointer;
+    }
+    .toLoginButton:hover{
+        color: var(--brand-focus);
     }
 
     .headerCartDiv{
