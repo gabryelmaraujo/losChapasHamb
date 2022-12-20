@@ -13,12 +13,27 @@ const CartProductStyles = styled.li`
     border: 0.06rem solid var(--grey-5);
     border-radius: 0.25rem;
 
+    @media (max-width: 329px){
+        height: 92%;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .productImgDiv{
         height: 100%;
         width: 5.625rem;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    @media (max-width: 329px){
+        .productImgDiv{
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     .productImg{
@@ -36,6 +51,26 @@ const CartProductStyles = styled.li`
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
+    }
+
+    @media (max-width: 329px){
+        .productInfosDiv{
+            width: 100%;
+            align-items: center;
+        }
+        
+    }
+
+    @media (max-width: 412px){
+        .productInfosDiv{
+            width: 5rem;
+        }
+    }
+
+    @media (max-width: 520px){
+        .productInfosDiv{
+            width: 10rem;
+        }
     }
 
     .productRemoveDiv{

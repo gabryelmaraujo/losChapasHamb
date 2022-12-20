@@ -1,5 +1,5 @@
-import { createContext, useState, useContext } from "react";
-import { ProductsContext } from "../ProductsContext";
+import { createContext, useState} from "react";
+
 
 interface iUserProviderValues{
     loggedUser: iLoggedUser;
