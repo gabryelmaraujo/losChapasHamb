@@ -31,6 +31,24 @@ const CartModalStyles = styled.section`
         padding: 2rem;
     }
 
+    @media (max-width: 520px){
+        .cartContainer{
+            width: 20rem;
+        }
+    }
+
+    @media (max-width: 410px){
+        .cartContainer{
+            width: 16rem;
+        }
+    }
+
+    @media (max-width: 330px){
+        .cartContainer{
+            width: 13rem;
+        }
+    }
+
     .cartHeader{
         display: flex;
         justify-content: space-between;
@@ -59,6 +77,23 @@ const CartModalStyles = styled.section`
         width: 25rem;
         height: 20rem;
         margin-bottom: 0.625rem;
+    }
+
+    @media (max-width: 520px) {
+        .cartMain{
+            width: 20rem;
+        }
+    }
+    @media (max-width: 410px) {
+        .cartMain{
+            width: 16rem;
+        }
+    }
+    @media (max-width: 329px) {
+        .cartMain{
+            width: 13rem;
+            height: 19rem;
+        }
     }
 
     .cartListDiv{

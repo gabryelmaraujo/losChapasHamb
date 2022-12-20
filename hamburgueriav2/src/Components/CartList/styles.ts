@@ -10,6 +10,13 @@ const CartListStyles = styled.ul`
     gap: 1.3rem;
     padding: 0.3rem;
 
+    @media (max-width: 329px){
+        height: 100%;
+        flex-direction: row;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+
 `
 
 export default CartListStyles
