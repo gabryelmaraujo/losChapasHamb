@@ -8,14 +8,14 @@ import { Link, useNavigate } from "react-router-dom"
 import CartModal from "../../Components/CartModal"
 import { useContext, useEffect } from "react"
 import { CartContext } from "../../contexts/CartContext"
-import { UserContext } from "../../contexts/UserContext"
+import { UserContext, iLoggedUser } from "../../contexts/UserContext"
 import { ProductsContext } from "../../contexts/ProductsContext"
 
 const MainPage = () => {
 
     const { getProducts } = useContext(ProductsContext)
     const { modalOpen, setModalOpen, cart } = useContext(CartContext)
-    const {loggedToken} = useContext(UserContext)
+    const {loggedToken, setLoggedUser} = useContext(UserContext)
 
 
     const navigate = useNavigate()
@@ -28,6 +28,7 @@ const MainPage = () => {
             navigate("/")
         }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     
@@ -43,6 +44,7 @@ return(
             <div className="utilitiesDiv">
                     <button className="toLoginButton" onClick={()=>{
                         localStorage.removeItem("@LosChapas/token")
+                        setLoggedUser({} as iLoggedUser)
 
                         navigate("/")
 
