@@ -1,12 +1,28 @@
 import LoginForm from "../../Components/LoginForm"
 import LoginPageStyles from "./styles"
 
+import { useContext, useEffect } from "react"
 
 import burgerIcon from "../../assets/burgericon.png"
 import losChapasLogo from "../../assets/loschapaslogo.png"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { ProductsContext } from "../../contexts/ProductsContext"
+import { CartContext } from "../../contexts/CartContext"
+import { UserContext } from "../../contexts/UserContext"
 
 const LoginPage = () => {
+
+    const {loggedToken} = useContext(UserContext)
+
+    const navigate = useNavigate()
+
+    useEffect(()=>{
+
+        if(loggedToken){
+            navigate("/main")
+        }
+
+    },[loggedToken, navigate])
 
 return(
     <LoginPageStyles>

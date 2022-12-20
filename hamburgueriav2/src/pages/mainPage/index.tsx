@@ -4,14 +4,30 @@ import igIcon from "../../assets/igpng.png"
 import logoLosChapas from "../../assets/loschapaslogo.png"
 import SearchForm from "../../Components/SearchForm"
 import ProductsList from "../../Components/ProductsList"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import CartModal from "../../Components/CartModal"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { CartContext } from "../../contexts/CartContext"
+import { UserContext } from "../../contexts/UserContext"
+import { ProductsContext } from "../../contexts/ProductsContext"
 
 const MainPage = () => {
 
+    const { getProducts } = useContext(ProductsContext)
     const { modalOpen, setModalOpen } = useContext(CartContext)
+    const {loggedToken} = useContext(UserContext)
+
+    const navigate = useNavigate()
+
+    useEffect(()=>{
+
+        if(loggedToken){
+            getProducts(loggedToken)
+        }else{
+            navigate("/")
+        }
+
+    },[getProducts, loggedToken, navigate])
 
 return(
     <MainPageStyles>
@@ -22,9 +38,12 @@ return(
                 </Link>
             </div>
             <div className="utilitiesDiv">
-                <Link to={"/login"}>
-                    <div className="toLoginAnchor">Sair</div>
-                </Link>
+                    <button className="toLoginButton" onClick={()=>{
+                        localStorage.setItem("@LosChapas/token", "")
+
+                        navigate("/")
+
+                    }}>Sair</button>
                 <div className="headerCartDiv">
                     <button className="openCartButton" onClick={()=>
                          setModalOpen(true) 

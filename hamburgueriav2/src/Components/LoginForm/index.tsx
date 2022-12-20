@@ -41,7 +41,8 @@ const LoginForm = () => {
 
                 const loggedToken = response.data.accessToken
 
-                setIsLogged(true)
+                localStorage.setItem("@LosChapas/token", loggedToken)
+
                 setLoggedUser(response.data)
 
                 getProducts(loggedToken)

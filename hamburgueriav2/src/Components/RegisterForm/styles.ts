@@ -18,7 +18,7 @@ const RegisterFormStyles = styled.form`
         background-color: unset;
         border: 0.06rem solid var(--brand);
         border-radius: 0.25rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         color: var(--brand);
     }
 
@@ -32,7 +32,7 @@ const RegisterFormStyles = styled.form`
         position: absolute;
         left: 1rem;
         top: -0.625rem;
-        width: 4rem;
+        padding: 0 0.5rem;
         text-align: center;
     }
     
