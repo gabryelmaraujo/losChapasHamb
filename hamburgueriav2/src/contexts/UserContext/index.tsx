@@ -1,10 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
+import { ProductsContext } from "../ProductsContext";
 
 interface iUserProviderValues{
     loggedUser: iLoggedUser;
     isLogged: boolean;
-    setLoggedUser: React.Dispatch<React.SetStateAction<iLoggedUser>> 
-    setIsLogged: React.Dispatch<React.SetStateAction<boolean>>
+    setLoggedUser: React.Dispatch<React.SetStateAction<iLoggedUser>>;
+    setIsLogged: React.Dispatch<React.SetStateAction<boolean>>;
+    loggedToken: string | null;
 }
 
 export const UserContext = createContext({} as iUserProviderValues)
@@ -27,15 +29,18 @@ interface iUserProviderProps{
 
 export const UserProvider = ({children}: iUserProviderProps) => {
 
+
     const [loggedUser, setLoggedUser] = useState({} as iLoggedUser)
     const [isLogged, setIsLogged] = useState(false)
+    const loggedToken = localStorage.getItem("@LosChapas/token")
 
 return(
     <UserContext.Provider value={{
         loggedUser,
         setLoggedUser,
         isLogged,
-        setIsLogged
+        setIsLogged,
+        loggedToken
     }}>
         {children}
     </UserContext.Provider>

@@ -31,8 +31,10 @@ const MainPageStyles = styled.div`
         align-items: center;
     }
 
-    .toLoginAnchor{
+    .toLoginButton{
         color: var(--brand);
+        background-color: unset;
+        border: 0;
     }
 
     .headerCartDiv{

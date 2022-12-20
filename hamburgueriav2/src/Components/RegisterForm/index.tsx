@@ -9,6 +9,7 @@ interface iRegisterValues{
     name: string;
     email: string;
     password: string;
+    confirmPassword: string;
 }
 
 const RegisterForm = () => {
@@ -16,7 +17,8 @@ const RegisterForm = () => {
     const registerSchema = yup.object().shape({
         name: yup.string().required("É obrigatório um nome!").min(4,"O nome precisa ter no mínimo 4 caracteres.").max(200, "o nome pode ter no máximo 200 caracteres."),
         email: yup.string().required("É necessário um email!").email("Esse email não é válido!"),
-        password: yup.string().required("É obrigatório uma senha!").matches(/(?=.*?[A-Z])/, "É necessário, pelo menos uma letra maíuscula").matches(/(?=.*?[a-z])/, "É necessário pelo menos uma letra minúscula.").matches(/(?=.*?[0-9])/, "É necessário, pelo menos um número.").matches(/(?=.*?[#?!@$%^&*-])/, "É necessário pelo menos um caractere special").min(6, "A senha precisa ter no mínimo 6 caracteres.")
+        password: yup.string().required("É obrigatório uma senha!").matches(/(?=.*?[A-Z])/, "É necessário, pelo menos uma letra maíuscula").matches(/(?=.*?[a-z])/, "É necessário pelo menos uma letra minúscula.").matches(/(?=.*?[0-9])/, "É necessário, pelo menos um número.").matches(/(?=.*?[#?!@$%^&*-])/, "É necessário pelo menos um caractere special").min(6, "A senha precisa ter no mínimo 6 caracteres."),
+        confirmPassword: yup.string().oneOf([yup.ref('password'), null], 'As senhas têm que coincidirem.'),
     })
 
     const { register, handleSubmit, formState: {errors} } = useForm<iRegisterValues>({
@@ -53,6 +55,11 @@ return(
             <input type="password" id="registerPassword" {...register("password")} />
                 {errors.password?.message && <p aria-label="error" className="inputError">{errors.password?.message}</p>}
             <span className="registerPasswordSpan">Senha</span>
+        </label>
+        <label htmlFor="confirmPassword" className="labelRegisterPassword">
+            <input type="password" id="confirmPassword" {...register("confirmPassword")} />
+                {errors.confirmPassword?.message && <p aria-label="error" className="inputError">{errors.confirmPassword?.message}</p>}
+            <span className="registerPasswordSpan">Confirmar senha</span>
         </label>
         <div className="submitDiv">
             <button type="submit" className="registerSubmitBttn">Cadastrar</button>

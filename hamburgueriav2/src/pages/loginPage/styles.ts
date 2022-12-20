@@ -89,6 +89,7 @@ h1{
     border-radius: 0.25rem;
     transition: all 0.8s;
     color: var(--brand);
+    text-align: center;
 }
 .goRegister:hover{
     background-color: var(--brand);
