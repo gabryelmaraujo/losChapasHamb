@@ -6,6 +6,8 @@ interface iProductsValues{
     products: iProducts[];
     setProducts: React.Dispatch<React.SetStateAction<iProducts[]>>;
     getProducts: (token:string) => void;
+    search: string;
+    setSearch: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const ProductsContext = createContext({} as iProductsValues)
@@ -25,6 +27,7 @@ export interface iProducts {
 export const ProductsProvider = ({children}: iProductsProps) => {
 
     const [products, setProducts] = useState([] as iProducts[])
+    const [search, setSearch] = useState('')
     
     const getProducts = async (token: string) => {
             try{
@@ -48,7 +51,9 @@ return(
     <ProductsContext.Provider value={{
         products,
         setProducts,
-        getProducts
+        getProducts,
+        search,
+        setSearch
     }}>
         {children}
     </ProductsContext.Provider>
