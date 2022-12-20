@@ -7,7 +7,7 @@ import CartModalStyles from "./styles"
 
 const CartModal = () => {
 
-    const { setModalOpen } = useContext(CartContext)
+    const { setModalOpen, cart, setCart, cartToastify } = useContext(CartContext)
 
 return(
     <CartModalStyles className="CartModalSection">
@@ -25,7 +25,17 @@ return(
             </main>
             <footer className="buyProducts">
                 <CartTotal/>
-                <button className="buyProductsBttn">Finalizar compra</button>
+                <button className="buyProductsBttn" onClick={()=>{
+                    if(cart.length > 0){
+                        cartToastify("submitCart")
+
+                        setTimeout(() => {
+                            window.location.reload()
+                            setCart([])
+                        }, 1500);
+                    }
+
+                }}>Finalizar compra</button>
             </footer>
         </section>
     </CartModalStyles>

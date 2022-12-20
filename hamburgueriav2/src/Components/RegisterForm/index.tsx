@@ -5,6 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import instance from "../../services/api"
 import { SubmitHandler } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
+import { useContext } from "react"
+import { UserContext } from "../../contexts/UserContext"
 
 interface iRegisterValues{
     name: string;
@@ -14,6 +16,8 @@ interface iRegisterValues{
 }
 
 const RegisterForm = () => {
+
+    const { userNotify } = useContext(UserContext)
 
     const navigate = useNavigate()
 
@@ -34,12 +38,14 @@ const RegisterForm = () => {
             const response = await instance.post("/users", data)
 
             if(response.status === 201){
-                navigate("/login")
-                // toast
+                userNotify("registerSuccess")
+                setTimeout(()=>{
+                    navigate("/login")
+                }, 1500)
             }
 
         }catch(error){
-            console.log(error)
+            userNotify("registerEmailError")
         }
     }
 
