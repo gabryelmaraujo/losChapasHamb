@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { CartContext } from "../../contexts/CartContext"
 import CartList from "../CartList"
+import CartTotal from "../CartTotal"
 import CartModalStyles from "./styles"
 
 
@@ -23,7 +24,7 @@ return(
                 </div>
             </main>
             <footer className="buyProducts">
-                <p className="totalPrice">R$ 000,00</p>
+                <CartTotal/>
                 <button className="buyProductsBttn">Finalizar compra</button>
             </footer>
         </section>
