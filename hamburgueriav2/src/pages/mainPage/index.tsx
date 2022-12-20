@@ -6,7 +6,7 @@ import SearchForm from "../../Components/SearchForm"
 import ProductsList from "../../Components/ProductsList"
 import { Link, useNavigate } from "react-router-dom"
 import CartModal from "../../Components/CartModal"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect } from "react"
 import { CartContext } from "../../contexts/CartContext"
 import { UserContext } from "../../contexts/UserContext"
 import { ProductsContext } from "../../contexts/ProductsContext"
@@ -29,6 +29,8 @@ const MainPage = () => {
         }
 
     },[getProducts, loggedToken, navigate])
+
+    
 
 return(
     <MainPageStyles>

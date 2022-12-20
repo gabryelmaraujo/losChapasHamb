@@ -6,7 +6,7 @@ import CartModalStyles from "./styles"
 
 const CartModal = () => {
 
-    const { modalOpen, setModalOpen } = useContext(CartContext)
+    const { setModalOpen } = useContext(CartContext)
 
 return(
     <CartModalStyles className="CartModalSection">
